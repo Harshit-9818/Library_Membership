@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Active Members</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Active Library Members</h2>
+    <a href="members" class="btn btn-secondary mb-3">Back to All Members</a>
+    <table class="table table-bordered table-striped">
+        <thead class="table-success">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Join Date</th>
+                <th>Issued Books</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="member : ${members}">
+                <td th:text="${member.id}"></td>
+                <td th:text="${member.name}"></td>
+                <td th:text="${member.joinDate}"></td>
+                <td th:text="${member.issuedBooks}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
